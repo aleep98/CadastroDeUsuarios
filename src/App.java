@@ -37,7 +37,7 @@ public class App {
                 
                 case 2:
                     if (users.isEmpty()) {
-                        System.out.println("Nenhum usuários encontrado!");
+                        System.out.println("Nenhum usuário encontrado!");
                     }else {
                         for( int i = 0; i < users.size(); i++){
                             User u = users.get(i);
