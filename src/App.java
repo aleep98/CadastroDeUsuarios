@@ -32,11 +32,40 @@ public class App {
                     int age = scanner.nextInt();
 
                     users.add(new User (name , email, age));
+                    System.out.println("Usuario Cadastrado com Sucesso!");
                     break;
-            
+                
+                case 2:
+                    if (users.isEmpty()) {
+                        System.out.println("Nenhum usuários encontrado!");
+                    }else {
+                        for( int i = 0; i < users.size(); i++){
+                            User u = users.get(i);
+                            System.out.println(i + " - " + u.name + " | " + u.age + " Idade " +  u.email + "Email" );
+                        }
+                    }
+                    break;
+
+                    case 3: 
+                    System.out.println("Digite o indice do usuário: ");
+                    int index = scanner.nextInt();
+
+                    if (index >= 0 && index < users.size()) {
+                        users.remove(index);
+                        System.out.println("Usuario removido!");
+                    }else{
+                        System.out.println("Indece inválido");
+                    }
+                    break;
+
+                    case 0:
+                        System.out.println("Saindo....");
+                        break;
                 default:
-                    break;
+                    System.out.println("Opção Inválida!");
             }
+        } while (option != 0); {
+            scanner.close();
         }
       
     }
